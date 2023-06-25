@@ -13,7 +13,9 @@ module.exports = {
       darkBlue: '#4B4C5F',
       orange: '#F47B56',
       backGroundColorOne: '#B068E9', 
-      backgroundColorTwo: '#6463E7'
+      backgroundColorTwo: '#6463E7',
+      silver: '#787887',
+      offWhite: '#E8E8EA'
     }
   },
   plugins: [],

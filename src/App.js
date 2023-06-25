@@ -1,11 +1,18 @@
 import './App.css';
+import Image from './components/Image';
+import Text from './components/Text';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Hello <span className='font-["Kumbh_Sans"]'>world!</span>
-    </h1>
+    <div className="App h-screen">
+      <div id='wrapper' className='h-full pt-[148px] px-6 pb-[85px] bg-gradient-to-b from-backGroundColorOne from-0% to-backgroundColorTwo to-100%'>
+        <div id='image'className='absolute w-[237px] h-[180px] top-[35px] left-[65px]'>
+          <Image />
+        </div>
+        <div id='text' className='bg-white rounded-[23px] pt-[115px] px-6 pb-[48px]'>
+          <Text />
+        </div>
+      </div>
     </div>
   );
 }
