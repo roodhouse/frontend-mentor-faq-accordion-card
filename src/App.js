@@ -9,7 +9,7 @@ function App() {
         <div id='image'className='absolute w-[237px] h-[180px] top-[35px] left-[65px]'>
           <Image />
         </div>
-        <div id='text' className='bg-white rounded-[23px] pt-[132px]'>
+        <div id='text' className='bg-white rounded-[23px] pt-[115px] px-6 pb-[48px]'>
           <Text />
         </div>
       </div>
