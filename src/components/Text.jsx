@@ -1,20 +1,51 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Arrow from '../images/icon-arrow-down.svg'
 
 function Text() {
 
-    function handleClick(e) {
-        const img = e.target
-        //flip the icon
-        img.style.transform = 'rotate(180deg)';
-        // unhide the answer div
-        const answer = img.parentElement.parentElement.nextSibling;
-        answer.classList.remove('hidden');
-        //style question
-        const question = img.parentElement.previousSibling.parentElement;
-        question.style.fontWeight = '700'
+    const [allAnswers, setAllAnswers] = useState([]);
+const [icons, setIcons] = useState([]);
+let currentAnswerDiv = null;
 
+useEffect(() => {
+  // Grab the answers and place them in an array
+  let theAnswers = document.querySelectorAll('.answer');
+  const allAnswersArray = Array.from(theAnswers)
+  setAllAnswers(allAnswersArray)
+
+  let theIcons = document.querySelectorAll('.imgDiv')
+  const allIconArray = Array.from(theIcons)
+  setIcons(allIconArray)
+}, [])
+
+icons.forEach((icon) => {
+  icon.addEventListener('click', (event) => {
+    let answerDiv = icon.parentElement.nextSibling;
+    let question = icon.previousSibling.parentElement;
+
+    if (currentAnswerDiv === answerDiv) {
+      // The same answerDiv is clicked, so close it
+      answerDiv.classList.add('hidden');
+      question.style.fontWeight = 400;
+      icon.style.transform = 'rotate(0deg)';
+      currentAnswerDiv = null;
+    } else {
+      // A different answerDiv is clicked, so close the current one and open this one
+      if (currentAnswerDiv !== null) {
+        let currentOpen = currentAnswerDiv.parentElement.firstChild
+        let currentIcon =currentOpen.firstChild.nextSibling
+        currentAnswerDiv.classList.add('hidden');
+        currentOpen.style.fontWeight = 400;
+        currentIcon.style.transform = 'rotate(0deg)';
+      }
+      answerDiv.classList.remove('hidden');
+      question.style.fontWeight = 700;
+      icon.style.transform = 'rotate(180deg)';
+      currentAnswerDiv = answerDiv;
     }
+  });
+});
+        
   return (
     <>
         <div id='title' className='text-veryDarkBlue text-[32px] font-bold font-["Kumbh_Sans"] mb-[38px]'>
@@ -26,11 +57,11 @@ function Text() {
                     <div className='questionText'>
                         <p>How many team members can I invite?</p>
                     </div>
-                    <div className="imgDiv" onClick={handleClick}>
+                    <div className="imgDiv">
                         <img src={Arrow} alt="Arrow" />
                     </div>
                 </div>
-                <div className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
+                <div id='answerOne' className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
                     <p>Three</p>
                 </div>
                 <div className="rectangleDiv w-full pt-[18px]">
@@ -46,7 +77,7 @@ function Text() {
                         <img src={Arrow} alt="Arrow" />
                     </div>
                 </div>
-                <div className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
+                <div id='answerTwo' className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
                     <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
                 </div>
                 <div className="rectangleDiv w-full pt-[18px]">
@@ -62,7 +93,7 @@ function Text() {
                         <img src={Arrow} alt="Arrow" />
                     </div>
                 </div>
-                <div className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
+                <div id='answerThree' className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
                     <p>With care</p>
                 </div>
                 <div className="rectangleDiv w-full pt-[18px]">
@@ -78,7 +109,7 @@ function Text() {
                         <img src={Arrow} alt="Arrow" />
                     </div>
                 </div>
-                <div className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
+                <div id='answerFour' className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
                     <p>No</p>
                 </div>
                 <div className="rectangleDiv w-full pt-[18px]">
@@ -94,7 +125,7 @@ function Text() {
                         <img src={Arrow} alt="Arrow" />
                     </div>
                 </div>
-                <div className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
+                <div id='answerFive' className="answer hidden font-['Kumbh_Sans'] text-[12px] leading-[18px] text-silver pt-[13px] text-left">
                     <p>For more money, yes.</p>
                 </div>
                 <div className="rectangleDiv w-full pt-[18px]">
