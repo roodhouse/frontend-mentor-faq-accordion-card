@@ -48,12 +48,12 @@ icons.forEach((icon) => {
         
   return (
     <>
-        <div id='title' className='text-veryDarkBlue text-[32px] font-bold font-["Kumbh_Sans"] mb-[38px]'>
+        <div id='title' className='text-veryDarkBlue text-[32px] font-bold font-["Kumbh_Sans"] mb-[38px] lg:text-left lg:mb-[45px]'>
             <h1>FAQ</h1>
         </div>
-        <div id='questions'>
+        <div id='questions' className='lg:relative lg:z-50'>
             <div className="questionDiv pb-[18px]">
-                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans']">
+                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans'] lg:text-[14px] cursor-pointer hover:text-orange">
                     <div className='questionText'>
                         <p>How many team members can I invite?</p>
                     </div>
@@ -69,7 +69,7 @@ icons.forEach((icon) => {
                 </div>
             </div>
             <div className="questionDiv pb-[18px]">
-                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans']">
+                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans'] lg:text-[14px] cursor-pointer hover:text-orange">
                     <div className='questionText'>
                         <p>What is the maximum file upload size?</p>
                     </div>
@@ -85,7 +85,7 @@ icons.forEach((icon) => {
                 </div>
             </div>
             <div className="questionDiv pb-[18px]">
-                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans']">
+                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans'] lg:text-[14px] cursor-pointer hover:text-orange">
                     <div className='questionText'>
                         <p>How do I reset my password?</p>
                     </div>
@@ -101,7 +101,7 @@ icons.forEach((icon) => {
                 </div>
             </div>
             <div className="questionDiv pb-[18px]">
-                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans']">
+                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans'] lg:text-[14px] cursor-pointer hover:text-orange">
                     <div className='questionText'>
                         <p>Can I cancel my subscription?</p>
                     </div>
@@ -117,7 +117,7 @@ icons.forEach((icon) => {
                 </div>
             </div>
             <div className="questionDiv">
-                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans']">
+                <div className="question flex flex-wrap justify-between items-center text-darkBlue text-[13px] font-['Kumbh_Sans'] lg:text-[14px] cursor-pointer hover:text-orange">
                     <div className='questionText'>
                         <p>Do you provide additional support?</p>
                     </div>
