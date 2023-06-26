@@ -4,8 +4,8 @@ import Arrow from '../images/icon-arrow-down.svg'
 function Text() {
 
     const [allAnswers, setAllAnswers] = useState([]);
-const [icons, setIcons] = useState([]);
-let currentAnswerDiv = null;
+    const [icons, setIcons] = useState([]);
+    let currentAnswerDiv = null;
 
 useEffect(() => {
   // Grab the answers and place them in an array
